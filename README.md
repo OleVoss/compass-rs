@@ -4,6 +4,11 @@
 Parsing the fields and setting them with a custom `set_field!("CRC", 0)` macro; then `header.CRC`
 - keeping the header fields as raw bytes and retrieving with functions? \
 Ala `header.crc()` or `header.get_crc()`
+```rust
+pub fn crc(&self) -> u8 {
+	(self.first_byte >> 5) & 1
+}
+```
 - single method? \
 Acces fields via bitflags and a retrieval function `header.get(HeaderFields::CRC)` \
 ```rust
