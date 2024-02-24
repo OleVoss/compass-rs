@@ -17,3 +17,4 @@ pub fn get(&self, field: HeaderField::CRC) -> u8 {
 		 	 ^^^^---> would't work since the bitshift would be different for every flag
 }
 ```
+_Parsing_ implies checking for errors (I guess). Therefore should the bitflags be avaluated and set when the packet is created and the first idea seems reasonable to implement. 
